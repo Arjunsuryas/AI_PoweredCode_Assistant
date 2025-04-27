@@ -1,0 +1,39 @@
+export type Language = 'javascript' | 'typescript' | 'python' | 'java' | 'csharp' | 'go';
+
+export interface CodeSuggestion {
+  id: string;
+  original: string;
+  suggestion: string;
+  explanation: string;
+}
+
+export interface BugReport {
+  id: string;
+  line: number;
+  severity: 'error' | 'warning' | 'info';
+  message: string;
+  fix: string;
+}
+
+export interface DocumentationItem {
+  id: string;
+  type: 'docstring' | 'comment' | 'readme';
+  content: string;
+}
+
+export interface Example {
+  id: string;
+  title: string;
+  language: Language;
+  description: string;
+  code: string;
+  optimizedCode: string;
+  documentation: string;
+}
+
+export interface FeedbackItem {
+  id: string;
+  suggestionId: string;
+  helpful: boolean;
+  comments?: string;
+}
